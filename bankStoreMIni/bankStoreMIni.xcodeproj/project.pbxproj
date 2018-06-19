@@ -54,6 +54,7 @@
 		9A370A8A20D915CF00ED30F6 /* bankStoreMIni */ = {
 			isa = PBXGroup;
 			children = (
+				9A370AC520D9174800ED30F6 /* source */,
 				9A370A8B20D915CF00ED30F6 /* AppDelegate.swift */,
 				9A370A8D20D915CF00ED30F6 /* ViewController.swift */,
 				9A370A8F20D915CF00ED30F6 /* Main.storyboard */,
@@ -62,6 +63,13 @@
 				9A370A9720D915D000ED30F6 /* Info.plist */,
 			);
 			path = bankStoreMIni;
+			sourceTree = "<group>";
+		};
+		9A370AC520D9174800ED30F6 /* source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
