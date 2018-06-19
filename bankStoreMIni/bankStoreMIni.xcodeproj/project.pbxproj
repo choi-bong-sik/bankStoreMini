@@ -12,6 +12,25 @@
 		9A370A9120D915CF00ED30F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A370A8F20D915CF00ED30F6 /* Main.storyboard */; };
 		9A370A9320D915D000ED30F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A370A9220D915D000ED30F6 /* Assets.xcassets */; };
 		9A370A9620D915D000ED30F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A370A9420D915D000ED30F6 /* LaunchScreen.storyboard */; };
+		9A370ADA20D9176800ED30F6 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AC620D9176700ED30F6 /* Validation.swift */; };
+		9A370ADB20D9176800ED30F6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AC720D9176700ED30F6 /* Response.swift */; };
+		9A370ADC20D9176800ED30F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A370AC820D9176700ED30F6 /* Info.plist */; };
+		9A370ADD20D9176800ED30F6 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AC920D9176700ED30F6 /* NetworkReachabilityManager.swift */; };
+		9A370ADE20D9176800ED30F6 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370ACA20D9176700ED30F6 /* Alamofire.swift */; };
+		9A370ADF20D9176800ED30F6 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370ACB20D9176700ED30F6 /* DispatchQueue+Alamofire.swift */; };
+		9A370AE020D9176800ED30F6 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370ACD20D9176700ED30F6 /* ResponseSerialization.swift */; };
+		9A370AE120D9176800ED30F6 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370ACE20D9176700ED30F6 /* SessionDelegate.swift */; };
+		9A370AE220D9176800ED30F6 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370ACF20D9176800ED30F6 /* Notifications.swift */; };
+		9A370AE320D9176800ED30F6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD020D9176800ED30F6 /* Result.swift */; };
+		9A370AE420D9176800ED30F6 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD120D9176800ED30F6 /* ServerTrustPolicy.swift */; };
+		9A370AE520D9176800ED30F6 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A370AD220D9176800ED30F6 /* Info-tvOS.plist */; };
+		9A370AE620D9176800ED30F6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD320D9176800ED30F6 /* SessionManager.swift */; };
+		9A370AE720D9176800ED30F6 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD420D9176800ED30F6 /* TaskDelegate.swift */; };
+		9A370AE820D9176800ED30F6 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD520D9176800ED30F6 /* AFError.swift */; };
+		9A370AE920D9176800ED30F6 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD620D9176800ED30F6 /* MultipartFormData.swift */; };
+		9A370AEA20D9176800ED30F6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */; };
+		9A370AEB20D9176800ED30F6 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD820D9176800ED30F6 /* Timeline.swift */; };
+		9A370AEC20D9176800ED30F6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD920D9176800ED30F6 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +41,26 @@
 		9A370A9220D915D000ED30F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A370A9520D915D000ED30F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A370A9720D915D000ED30F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A370AC620D9176700ED30F6 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		9A370AC720D9176700ED30F6 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		9A370AC820D9176700ED30F6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A370AC920D9176700ED30F6 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		9A370ACA20D9176700ED30F6 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		9A370ACB20D9176700ED30F6 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		9A370ACC20D9176700ED30F6 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		9A370ACD20D9176700ED30F6 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		9A370ACE20D9176700ED30F6 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		9A370ACF20D9176800ED30F6 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		9A370AD020D9176800ED30F6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9A370AD120D9176800ED30F6 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		9A370AD220D9176800ED30F6 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		9A370AD320D9176800ED30F6 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		9A370AD420D9176800ED30F6 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		9A370AD520D9176800ED30F6 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		9A370AD620D9176800ED30F6 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		9A370AD820D9176800ED30F6 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		9A370AD920D9176800ED30F6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +107,26 @@
 		9A370AC520D9174800ED30F6 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				9A370AD520D9176800ED30F6 /* AFError.swift */,
+				9A370ACC20D9176700ED30F6 /* Alamofire.h */,
+				9A370ACA20D9176700ED30F6 /* Alamofire.swift */,
+				9A370ACB20D9176700ED30F6 /* DispatchQueue+Alamofire.swift */,
+				9A370AD220D9176800ED30F6 /* Info-tvOS.plist */,
+				9A370AC820D9176700ED30F6 /* Info.plist */,
+				9A370AD620D9176800ED30F6 /* MultipartFormData.swift */,
+				9A370AC920D9176700ED30F6 /* NetworkReachabilityManager.swift */,
+				9A370ACF20D9176800ED30F6 /* Notifications.swift */,
+				9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */,
+				9A370AD920D9176800ED30F6 /* Request.swift */,
+				9A370AC720D9176700ED30F6 /* Response.swift */,
+				9A370ACD20D9176700ED30F6 /* ResponseSerialization.swift */,
+				9A370AD020D9176800ED30F6 /* Result.swift */,
+				9A370AD120D9176800ED30F6 /* ServerTrustPolicy.swift */,
+				9A370ACE20D9176700ED30F6 /* SessionDelegate.swift */,
+				9A370AD320D9176800ED30F6 /* SessionManager.swift */,
+				9A370AD420D9176800ED30F6 /* TaskDelegate.swift */,
+				9A370AD820D9176800ED30F6 /* Timeline.swift */,
+				9A370AC620D9176700ED30F6 /* Validation.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -130,6 +189,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A370AE520D9176800ED30F6 /* Info-tvOS.plist in Resources */,
+				9A370ADC20D9176800ED30F6 /* Info.plist in Resources */,
 				9A370A9620D915D000ED30F6 /* LaunchScreen.storyboard in Resources */,
 				9A370A9320D915D000ED30F6 /* Assets.xcassets in Resources */,
 				9A370A9120D915CF00ED30F6 /* Main.storyboard in Resources */,
@@ -143,8 +204,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A370AEB20D9176800ED30F6 /* Timeline.swift in Sources */,
+				9A370AE220D9176800ED30F6 /* Notifications.swift in Sources */,
+				9A370ADE20D9176800ED30F6 /* Alamofire.swift in Sources */,
+				9A370AE920D9176800ED30F6 /* MultipartFormData.swift in Sources */,
+				9A370AE820D9176800ED30F6 /* AFError.swift in Sources */,
+				9A370ADF20D9176800ED30F6 /* DispatchQueue+Alamofire.swift in Sources */,
+				9A370AE420D9176800ED30F6 /* ServerTrustPolicy.swift in Sources */,
+				9A370ADD20D9176800ED30F6 /* NetworkReachabilityManager.swift in Sources */,
+				9A370AEA20D9176800ED30F6 /* ParameterEncoding.swift in Sources */,
+				9A370AE720D9176800ED30F6 /* TaskDelegate.swift in Sources */,
+				9A370AE120D9176800ED30F6 /* SessionDelegate.swift in Sources */,
+				9A370AE020D9176800ED30F6 /* ResponseSerialization.swift in Sources */,
+				9A370AEC20D9176800ED30F6 /* Request.swift in Sources */,
+				9A370ADB20D9176800ED30F6 /* Response.swift in Sources */,
 				9A370A8E20D915CF00ED30F6 /* ViewController.swift in Sources */,
+				9A370ADA20D9176800ED30F6 /* Validation.swift in Sources */,
 				9A370A8C20D915CF00ED30F6 /* AppDelegate.swift in Sources */,
+				9A370AE320D9176800ED30F6 /* Result.swift in Sources */,
+				9A370AE620D9176800ED30F6 /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
