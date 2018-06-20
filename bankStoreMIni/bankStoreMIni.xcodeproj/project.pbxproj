@@ -93,6 +93,7 @@
 		9A370A8A20D915CF00ED30F6 /* bankStoreMIni */ = {
 			isa = PBXGroup;
 			children = (
+				9A370AED20D9EA3D00ED30F6 /* Network */,
 				9A370AC520D9174800ED30F6 /* source */,
 				9A370A8B20D915CF00ED30F6 /* AppDelegate.swift */,
 				9A370A8D20D915CF00ED30F6 /* ViewController.swift */,
@@ -129,6 +130,13 @@
 				9A370AC620D9176700ED30F6 /* Validation.swift */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		9A370AED20D9EA3D00ED30F6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
