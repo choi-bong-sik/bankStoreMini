@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
+    var dataTask: URLSessionDataTask?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,7 +23,37 @@ class ViewController: UIViewController {
          https://itunes.apple.com/lookup?id=839333328&country=kr
          //839333328
          */
-        self.getDetail(appId: "839333328")
+        NetworkManager.sharedManager.getAppStoreList(url: URL(string: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")!)
+        {
+            (data, response, error) in
+            print(data)
+            print(response)
+            print(error)
+        }
+    }
+    
+    func getAppStoreList(){
+        if dataTask != nil {
+            dataTask?.cancel()
+        }
+        let url = URL(string: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
+        dataTask = defaultSession.dataTask(with: URLRequest.init(url: url!), completionHandler:
+            {
+                (data, response, error) in
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode == 200 {
+                        guard let resultDic = self.convertServerResponseData(responseData: data) else {
+                            return
+                        }
+                        print(resultDic)
+                    }
+                }
+                
+        })
+        dataTask?.resume()
     }
     
     func getList()
@@ -39,7 +72,7 @@ class ViewController: UIViewController {
                     guard let resultDic = self.convertServerResponseData(responseData: data) else {
                         return
                     }
-                    
+                    print(resultDic)
                     break
                 case .failure(let error):
                     print(error)
@@ -64,7 +97,7 @@ class ViewController: UIViewController {
                     guard let resultDic = self.convertServerResponseData(responseData: data) else {
                         return
                     }
-                    
+                    print(resultDic)
                     break
                 case .failure(let error):
                     print(error)
