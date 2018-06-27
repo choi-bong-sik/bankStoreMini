@@ -17,7 +17,7 @@ class NetworkManager: NSObject {
         
     }
     
-    func getAppStoreList(url:URL, completionHandler: @escaping ([String: Any]?, URLResponse?, Error?) -> Swift.Void){
+    func getAppStoreList(url:URL, completionHandler: @escaping ([String: Any]?, Error?) -> Swift.Void){
         if dataTask != nil {
             dataTask?.cancel()
         }
@@ -26,20 +26,33 @@ class NetworkManager: NSObject {
                 (data, response, error) in
                 
                 if let error = error {
-                    print(error.localizedDescription)
-                    completionHandler(nil, response, error)
+                    completionHandler(nil, error)
                 } else if let httpResponse = response as? HTTPURLResponse {
                     if httpResponse.statusCode == 200 {
                         guard let resultDic = self.convertServerResponseData(responseData: data) else {
                             return
                         }
-                        print(resultDic)
-                        completionHandler(resultDic, response, error)
+                        completionHandler(resultDic, error)
                     }
                 }
                 
         })
         dataTask?.resume()
+    }
+    
+    func getImage (url:URL, completionHandler: @escaping (Data?, Error?) -> Swift.Void){
+        URLSession.shared.dataTask(with: url, completionHandler: {
+            (data, response, error) in
+            if error != nil {
+                print(error!)
+                completionHandler(nil,error)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completionHandler(data,error)
+            }
+        }).resume()
     }
     
     func convertServerResponseData(responseData: Data!) -> [String: Any]?{
@@ -51,7 +64,6 @@ class NetworkManager: NSObject {
             // json실
             return ["Result":"R311"]
         }
-        print(resultDic)
         return resultDic
     }
     func convertToDictionary(text: String) -> [String: Any]? {

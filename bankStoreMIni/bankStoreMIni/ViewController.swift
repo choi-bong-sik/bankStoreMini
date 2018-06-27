@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
     
     let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
     var dataTask: URLSessionDataTask?
@@ -25,10 +26,15 @@ class ViewController: UIViewController {
          */
         NetworkManager.sharedManager.getAppStoreList(url: URL(string: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")!)
         {
-            (data, response, error) in
-            print(data)
-            print(response)
-            print(error)
+            (resultDic, error) in
+            if let feedData:Dictionary = resultDic!["feed"] as? Dictionary<String,Any> {
+                if let entryData:Array = feedData["entry"] as? Array<Dictionary<String,Any>> {
+                    print(entryData.first!)
+                }
+            }
+        }
+        NetworkManager.sharedManager.getImage(url: URL(string:"https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/51/31/34/513134c5-f179-0223-7278-7f477500d1c2/AppIcon-1x_U007emarketing-85-220-0-6.png/53x53bb-85.png")!) { (data, error) in
+            self.imageView.image = UIImage(data: data!)
         }
     }
     
