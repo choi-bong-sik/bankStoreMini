@@ -57,8 +57,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cellData = self.arrListModel[indexPath.row]
         cell.lblTitle.text = "\(cellData.name!)"
         cell.lblSubTitle.text = "\(cellData.id!)"
+        cell.lblNum.text = "\(indexPath.row + 1)"
         NetworkManager.sharedManager.getImage(url: URL(string: cellData.image!)!) { (data, error) in
-            
             cell.imgLogo.image = UIImage(data: data!)
         }
         return cell;
