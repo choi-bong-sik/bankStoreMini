@@ -32,6 +32,8 @@
 		9A370AEB20D9176800ED30F6 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD820D9176800ED30F6 /* Timeline.swift */; };
 		9A370AEC20D9176800ED30F6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD920D9176800ED30F6 /* Request.swift */; };
 		9ADFDD9420E372F700544660 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9320E372F700544660 /* NetworkManager.swift */; };
+		9ADFDD9620E373B100544660 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9520E373B100544660 /* ListModel.swift */; };
+		9ADFDD9820E380E200544660 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9720E380E200544660 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		9A370AD820D9176800ED30F6 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		9A370AD920D9176800ED30F6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9ADFDD9320E372F700544660 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9ADFDD9520E373B100544660 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		9ADFDD9720E380E200544660 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +99,12 @@
 		9A370A8A20D915CF00ED30F6 /* bankStoreMIni */ = {
 			isa = PBXGroup;
 			children = (
-				9ADFDD9320E372F700544660 /* NetworkManager.swift */,
 				9A370AC520D9174800ED30F6 /* source */,
 				9A370A8B20D915CF00ED30F6 /* AppDelegate.swift */,
+				9ADFDD9320E372F700544660 /* NetworkManager.swift */,
+				9ADFDD9520E373B100544660 /* ListModel.swift */,
 				9A370A8D20D915CF00ED30F6 /* ViewController.swift */,
+				9ADFDD9720E380E200544660 /* TableViewCell.swift */,
 				9A370A8F20D915CF00ED30F6 /* Main.storyboard */,
 				9A370A9220D915D000ED30F6 /* Assets.xcassets */,
 				9A370A9420D915D000ED30F6 /* LaunchScreen.storyboard */,
@@ -224,7 +230,9 @@
 				9A370ADB20D9176800ED30F6 /* Response.swift in Sources */,
 				9A370A8E20D915CF00ED30F6 /* ViewController.swift in Sources */,
 				9A370ADA20D9176800ED30F6 /* Validation.swift in Sources */,
+				9ADFDD9820E380E200544660 /* TableViewCell.swift in Sources */,
 				9A370A8C20D915CF00ED30F6 /* AppDelegate.swift in Sources */,
+				9ADFDD9620E373B100544660 /* ListModel.swift in Sources */,
 				9A370AE320D9176800ED30F6 /* Result.swift in Sources */,
 				9A370AE620D9176800ED30F6 /* SessionManager.swift in Sources */,
 			);

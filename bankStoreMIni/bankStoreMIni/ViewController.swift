@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var table:UITableView!
     
     let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
     var dataTask: URLSessionDataTask?
+    var arrListModel:Array<ListModel> = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,14 @@ class ViewController: UIViewController {
             (resultDic, error) in
             if let feedData:Dictionary = resultDic!["feed"] as? Dictionary<String,Any> {
                 if let entryData:Array = feedData["entry"] as? Array<Dictionary<String,Any>> {
-                    print(entryData.first!)
+                    self.arrListModel = entryData.map{ item -> ListModel in
+                        return ListModel.init(name: NetworkManager.sharedManager.getName(name: item["im:name"] as! Dictionary<String, Any>),
+                                              image: NetworkManager.sharedManager.getImage(image: item["im:image"] as! Array<Dictionary<String,Any>>),
+                                              id: NetworkManager.sharedManager.getId(id: item["id"] as! Dictionary<String, Any>))
+                    }
+                    DispatchQueue.main.async {
+                        self.table.reloadData()
+                    }
                 }
             }
         }
@@ -38,101 +47,20 @@ class ViewController: UIViewController {
         }
     }
     
-    func getAppStoreList(){
-        if dataTask != nil {
-            dataTask?.cancel()
-        }
-        let url = URL(string: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")
-        dataTask = defaultSession.dataTask(with: URLRequest.init(url: url!), completionHandler:
-            {
-                (data, response, error) in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                } else if let httpResponse = response as? HTTPURLResponse {
-                    if httpResponse.statusCode == 200 {
-                        guard let resultDic = self.convertServerResponseData(responseData: data) else {
-                            return
-                        }
-                        print(resultDic)
-                    }
-                }
-                
-        })
-        dataTask?.resume()
+    // MARK: - table
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.arrListModel.count
     }
     
-    func getList()
-    {
-        SessionManager.default.request("https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json").responseData
-            {
-                [weak self] responseData in
-                guard let `self` = self else { return }
-                
-                print(responseData.debugDescription)
-                dump(responseData.result)
-                switch responseData.result {
-                case .success(let data):
-                    print(data)
-                    
-                    guard let resultDic = self.convertServerResponseData(responseData: data) else {
-                        return
-                    }
-                    print(resultDic)
-                    break
-                case .failure(let error):
-                    print(error)
-                    break
-                }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierTableViewCell", for: indexPath) as! TableViewCell
+        let cellData = self.arrListModel[indexPath.row]
+        cell.lblTitle.text = "\(cellData.name!)"
+        cell.lblSubTitle.text = "\(cellData.id!)"
+        NetworkManager.sharedManager.getImage(url: URL(string: cellData.image!)!) { (data, error) in
+            
+            cell.imgLogo.image = UIImage(data: data!)
         }
+        return cell;
     }
-    
-    func getDetail(appId : String){
-        SessionManager.default.request("https://itunes.apple.com/lookup?id=\(appId)&country=kr").responseData
-            {
-                [weak self] responseData in
-                guard let `self` = self else { return }
-                
-                print(responseData.debugDescription)
-                dump(responseData.result)
-                
-                switch responseData.result {
-                case .success(let data):
-                    print(data)
-                    
-                    guard let resultDic = self.convertServerResponseData(responseData: data) else {
-                        return
-                    }
-                    print(resultDic)
-                    break
-                case .failure(let error):
-                    print(error)
-                    break
-                }
-        }
-    }
-    
-    func convertServerResponseData(responseData: Data!) -> [String: Any]?{
-        guard let responseDataStr: String = String(data:responseData , encoding: .utf8) else {
-            // 디코딩 실패
-            return ["Result":"R310"]
-        }
-        guard let resultDic = self.convertToDictionary(text: responseDataStr) else {
-            // json실
-            return ["Result":"R311"]
-        }
-        print(resultDic)
-        return resultDic
-    }
-    func convertToDictionary(text: String) -> [String: Any]? {
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print("convertToDictionary Error : \(error.localizedDescription)")
-            }
-        }
-        return nil
-    }
-    
 }

@@ -61,7 +61,7 @@ class NetworkManager: NSObject {
             return ["Result":"R310"]
         }
         guard let resultDic = self.convertToDictionary(text: responseDataStr) else {
-            // json실
+            // json실패
             return ["Result":"R311"]
         }
         return resultDic
@@ -75,5 +75,26 @@ class NetworkManager: NSObject {
             }
         }
         return nil
+    }
+    func getId(id:Dictionary<String,Any>) -> Int {
+        if let attributes =  id["attributes"] as? Dictionary<String, Any> {
+            if let imId = attributes["im:id"] {
+                return Int(imId as! String)!
+            }
+            return 0
+        }
+        return 0
+    }
+    func getName(name:Dictionary<String,Any>) -> String {
+        if let label = name["label"] as? String {
+            return label
+        }
+        return ""
+    }
+    func getImage(image:Array<Dictionary<String,Any>>) -> String{
+        if let label = image.last!["label"] as? String {
+            return label
+        }
+        return ""
     }
 }
