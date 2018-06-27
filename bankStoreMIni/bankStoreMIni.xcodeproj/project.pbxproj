@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17053B4820DF26B200042DBA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17053B4720DF26B200042DBA /* NetworkManager.swift */; };
 		9A370A8C20D915CF00ED30F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370A8B20D915CF00ED30F6 /* AppDelegate.swift */; };
 		9A370A8E20D915CF00ED30F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370A8D20D915CF00ED30F6 /* ViewController.swift */; };
 		9A370A9120D915CF00ED30F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A370A8F20D915CF00ED30F6 /* Main.storyboard */; };
@@ -32,10 +31,10 @@
 		9A370AEA20D9176800ED30F6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */; };
 		9A370AEB20D9176800ED30F6 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD820D9176800ED30F6 /* Timeline.swift */; };
 		9A370AEC20D9176800ED30F6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD920D9176800ED30F6 /* Request.swift */; };
+		9A370AEF20E324B800ED30F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AEE20E324B500ED30F6 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17053B4720DF26B200042DBA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9A370A8820D915CF00ED30F6 /* bankStoreMIni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bankStoreMIni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A370A8B20D915CF00ED30F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A370A8D20D915CF00ED30F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		9A370AD820D9176800ED30F6 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		9A370AD920D9176800ED30F6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		9A370AEE20E324B500ED30F6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +95,11 @@
 		9A370A8A20D915CF00ED30F6 /* bankStoreMIni */ = {
 			isa = PBXGroup;
 			children = (
+				9A370AEE20E324B500ED30F6 /* NetworkManager.swift */,
+				9A370AED20D9EA3D00ED30F6 /* Network */,
 				9A370AC520D9174800ED30F6 /* source */,
 				9A370A8B20D915CF00ED30F6 /* AppDelegate.swift */,
 				9A370A8D20D915CF00ED30F6 /* ViewController.swift */,
-				17053B4720DF26B200042DBA /* NetworkManager.swift */,
 				9A370A8F20D915CF00ED30F6 /* Main.storyboard */,
 				9A370A9220D915D000ED30F6 /* Assets.xcassets */,
 				9A370A9420D915D000ED30F6 /* LaunchScreen.storyboard */,
@@ -132,6 +133,13 @@
 				9A370AC620D9176700ED30F6 /* Validation.swift */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		9A370AED20D9EA3D00ED30F6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +227,7 @@
 				9A370AE720D9176800ED30F6 /* TaskDelegate.swift in Sources */,
 				9A370AE120D9176800ED30F6 /* SessionDelegate.swift in Sources */,
 				9A370AE020D9176800ED30F6 /* ResponseSerialization.swift in Sources */,
-				17053B4820DF26B200042DBA /* NetworkManager.swift in Sources */,
+				9A370AEF20E324B800ED30F6 /* NetworkManager.swift in Sources */,
 				9A370AEC20D9176800ED30F6 /* Request.swift in Sources */,
 				9A370ADB20D9176800ED30F6 /* Response.swift in Sources */,
 				9A370A8E20D915CF00ED30F6 /* ViewController.swift in Sources */,
@@ -370,18 +378,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9553L7VB9;
 				INFOPLIST_FILE = bankStoreMIni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inicis.bankStoreMIni;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redsssl.bankStoreMIni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,17 +395,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9553L7VB9;
 				INFOPLIST_FILE = bankStoreMIni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inicis.bankStoreMIni;
+				PRODUCT_BUNDLE_IDENTIFIER = com.redsssl.bankStoreMIni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
