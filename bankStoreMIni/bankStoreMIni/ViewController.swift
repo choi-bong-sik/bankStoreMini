@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     func getList()
     {
-        AlamofireAppManager.shared.request("https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json").responseData
+        SessionManager.default.request("https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json").responseData
             {
                 [weak self] responseData in
                 guard let `self` = self else { return }
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     func getDetail(appId : String){
-        AlamofireAppManager.shared.request("https://itunes.apple.com/lookup?id=\(appId)&country=kr").responseData
+        SessionManager.default.request("https://itunes.apple.com/lookup?id=\(appId)&country=kr").responseData
             {
                 [weak self] responseData in
                 guard let `self` = self else { return }
@@ -96,15 +96,4 @@ class ViewController: UIViewController {
         return nil
     }
     
-}
-
-
-struct AlamofireAppManager {
-    static let shared: SessionManager = {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 30
-        
-        let sessionManager = SessionManager(configuration: configuration)
-        return sessionManager
-    }()
 }
