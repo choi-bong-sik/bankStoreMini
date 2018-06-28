@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-650" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--금융-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bankStoreMIni" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3op-vy-zmX"/>
+                    <navigationItem key="navigationItem" title="금융" id="3op-vy-zmX"/>
                     <connections>
                         <outlet property="table" destination="GdI-dP-nFt" id="i21-fD-U8X"/>
                     </connections>

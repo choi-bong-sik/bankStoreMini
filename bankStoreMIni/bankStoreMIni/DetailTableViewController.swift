@@ -9,16 +9,13 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
-    var cellData:ListModel?
+    var detailModel:DetailModel?
+    var rank:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print(detailModel?.artistName)
     }
 
     override func didReceiveMemoryWarning() {

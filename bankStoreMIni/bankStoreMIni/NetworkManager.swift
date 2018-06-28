@@ -17,7 +17,7 @@ class NetworkManager: NSObject {
         
     }
     
-    func getAppStoreList(url:URL, completionHandler: @escaping ([String: Any]?, Error?) -> Swift.Void){
+    func getStoreData(url:URL, completionHandler: @escaping ([String: Any]?, Error?) -> Swift.Void){
         if dataTask != nil {
             dataTask?.cancel()
         }
@@ -33,6 +33,8 @@ class NetworkManager: NSObject {
                             return
                         }
                         completionHandler(resultDic, error)
+                    }else{
+                        completionHandler(["statusCode":httpResponse.statusCode],error)
                     }
                 }
                 
@@ -59,11 +61,11 @@ class NetworkManager: NSObject {
     func convertServerResponseData(responseData: Data!) -> [String: Any]?{
         guard let responseDataStr: String = String(data:responseData , encoding: .utf8) else {
             // 디코딩 실패
-            return ["Result":"R310"]
+            return ["statusCode":"C310"]
         }
         guard let resultDic = self.convertToDictionary(text: responseDataStr) else {
             // json실패
-            return ["Result":"R311"]
+            return ["statusCode":"C311"]
         }
         return resultDic
     }
@@ -93,9 +95,9 @@ class NetworkManager: NSObject {
         return ""
     }
     func getImage(image:Array<Dictionary<String,Any>>) -> String{
-//        if let label = image.last!["label"] as? String {
-//            return label
-//        }
+        if let label = image.last!["label"] as? String {
+            return label
+        }
         return ""
     }
 }

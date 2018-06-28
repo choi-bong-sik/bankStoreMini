@@ -11,11 +11,11 @@ import UIKit
 class ListModel: NSObject {
     var name : String?
     var image : String?
-    var id : Int?
+    var trackId : Int?
     
-    init(name:String?, image:String?, id:Int?){
+    init(name:String?, image:String?, trackId:Int?){
         self.name = name
         self.image = image
-        self.id = id
+        self.trackId = trackId
     }
 }
