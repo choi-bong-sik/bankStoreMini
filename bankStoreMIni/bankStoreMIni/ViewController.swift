@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var table:UITableView!
     
     let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
@@ -42,9 +41,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 }
             }
         }
-        NetworkManager.sharedManager.getImage(url: URL(string:"https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/51/31/34/513134c5-f179-0223-7278-7f477500d1c2/AppIcon-1x_U007emarketing-85-220-0-6.png/53x53bb-85.png")!) { (data, error) in
-            self.imageView.image = UIImage(data: data!)
-        }
     }
     
     // MARK: - table
@@ -53,13 +49,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierTableViewCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierTableViewCell", for: indexPath) as! StoreListTableViewCell
         let cellData = self.arrListModel[indexPath.row]
         cell.lblTitle.text = "\(cellData.name!)"
         cell.lblSubTitle.text = "\(cellData.id!)"
         cell.lblNum.text = "\(indexPath.row + 1)"
-        NetworkManager.sharedManager.getImage(url: URL(string: cellData.image!)!) { (data, error) in
-            cell.imgLogo.image = UIImage(data: data!)
+        if let imgURL = URL(string: cellData.image!) {
+            NetworkManager.sharedManager.getImage(url: imgURL)
+            {
+                (data, error) in
+                cell.imgLogo.image = UIImage(data: data!)
+            }
         }
         return cell;
     }

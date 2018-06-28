@@ -31,9 +31,10 @@
 		9A370AEA20D9176800ED30F6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */; };
 		9A370AEB20D9176800ED30F6 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD820D9176800ED30F6 /* Timeline.swift */; };
 		9A370AEC20D9176800ED30F6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A370AD920D9176800ED30F6 /* Request.swift */; };
+		9A91447920E4BBDE007034D9 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91447820E4BBDE007034D9 /* DetailTableViewController.swift */; };
 		9ADFDD9420E372F700544660 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9320E372F700544660 /* NetworkManager.swift */; };
 		9ADFDD9620E373B100544660 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9520E373B100544660 /* ListModel.swift */; };
-		9ADFDD9820E380E200544660 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9720E380E200544660 /* TableViewCell.swift */; };
+		9ADFDD9820E380E200544660 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9720E380E200544660 /* StoreListTableViewCell.swift */; };
 		9ADFDD9A20E3985B00544660 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFDD9920E3985B00544660 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,9 +66,10 @@
 		9A370AD720D9176800ED30F6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		9A370AD820D9176800ED30F6 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		9A370AD920D9176800ED30F6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		9A91447820E4BBDE007034D9 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		9ADFDD9320E372F700544660 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9ADFDD9520E373B100544660 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
-		9ADFDD9720E380E200544660 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9ADFDD9720E380E200544660 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		9ADFDD9920E3985B00544660 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +108,8 @@
 				9ADFDD9320E372F700544660 /* NetworkManager.swift */,
 				9ADFDD9520E373B100544660 /* ListModel.swift */,
 				9A370A8D20D915CF00ED30F6 /* ViewController.swift */,
-				9ADFDD9720E380E200544660 /* TableViewCell.swift */,
+				9ADFDD9720E380E200544660 /* StoreListTableViewCell.swift */,
+				9A91447820E4BBDE007034D9 /* DetailTableViewController.swift */,
 				9ADFDD9920E3985B00544660 /* UIViewExtensions.swift */,
 				9A370A8F20D915CF00ED30F6 /* Main.storyboard */,
 				9A370A9220D915D000ED30F6 /* Assets.xcassets */,
@@ -228,13 +231,14 @@
 				9A370ADD20D9176800ED30F6 /* NetworkReachabilityManager.swift in Sources */,
 				9A370AEA20D9176800ED30F6 /* ParameterEncoding.swift in Sources */,
 				9A370AE720D9176800ED30F6 /* TaskDelegate.swift in Sources */,
+				9A91447920E4BBDE007034D9 /* DetailTableViewController.swift in Sources */,
 				9A370AE120D9176800ED30F6 /* SessionDelegate.swift in Sources */,
 				9A370AE020D9176800ED30F6 /* ResponseSerialization.swift in Sources */,
 				9A370AEC20D9176800ED30F6 /* Request.swift in Sources */,
 				9A370ADB20D9176800ED30F6 /* Response.swift in Sources */,
 				9A370A8E20D915CF00ED30F6 /* ViewController.swift in Sources */,
 				9A370ADA20D9176800ED30F6 /* Validation.swift in Sources */,
-				9ADFDD9820E380E200544660 /* TableViewCell.swift in Sources */,
+				9ADFDD9820E380E200544660 /* StoreListTableViewCell.swift in Sources */,
 				9A370A8C20D915CF00ED30F6 /* AppDelegate.swift in Sources */,
 				9ADFDD9620E373B100544660 /* ListModel.swift in Sources */,
 				9A370AE320D9176800ED30F6 /* Result.swift in Sources */,

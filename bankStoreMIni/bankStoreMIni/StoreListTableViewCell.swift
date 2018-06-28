@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class StoreListTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle:UILabel!
     @IBOutlet weak var lblNum:UILabel!
     @IBOutlet weak var lblSubTitle:UILabel!

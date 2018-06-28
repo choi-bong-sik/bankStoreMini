@@ -41,6 +41,7 @@ class NetworkManager: NSObject {
     }
     
     func getImage (url:URL, completionHandler: @escaping (Data?, Error?) -> Swift.Void){
+        print(url)
         URLSession.shared.dataTask(with: url, completionHandler: {
             (data, response, error) in
             if error != nil {
@@ -92,9 +93,9 @@ class NetworkManager: NSObject {
         return ""
     }
     func getImage(image:Array<Dictionary<String,Any>>) -> String{
-        if let label = image.last!["label"] as? String {
-            return label
-        }
+//        if let label = image.last!["label"] as? String {
+//            return label
+//        }
         return ""
     }
 }
