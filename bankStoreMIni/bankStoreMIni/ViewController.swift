@@ -63,4 +63,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         return cell;
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellData = self.arrListModel[indexPath.row]
+        let viewController: DetailTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
+        viewController.cellData = cellData
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

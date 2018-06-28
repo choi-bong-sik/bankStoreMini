@@ -9,7 +9,8 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
-
+    var cellData:ListModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
