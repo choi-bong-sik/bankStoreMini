@@ -12,27 +12,34 @@ class DetailTableViewController: UITableViewController {
     var detailModel:DetailModel?
     var rank:Int?
     
+    @IBOutlet weak var imgLogo:UIImageView!
+    @IBOutlet weak var lblTrackName:UILabel!
+    @IBOutlet weak var lblUserRatingCount:UILabel!
+    @IBOutlet weak var lblRank:UILabel!
+    @IBOutlet weak var lblTrackContentRating:UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(detailModel?.artistName)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.title = detailModel?.artistName!
+        if let artworkUrl = detailModel?.artworkUrl100 {
+            self.imgLogo.loadImageUsingCache(withUrl:artworkUrl)
+        }
+        self.lblTrackName.text = detailModel?.artistName!
+        self.lblUserRatingCount.text = "평가 \(detailModel?.averageUserRating ?? 0)"
+        self.lblTrackContentRating.text = detailModel?.trackContentRating
+        self.lblRank.text = "#\(rank!)"
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 5
     }
 
     /*

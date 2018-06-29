@@ -42,22 +42,6 @@ class NetworkManager: NSObject {
         dataTask?.resume()
     }
     
-    func getImage (url:URL, completionHandler: @escaping (Data?, Error?) -> Swift.Void){
-        print(url)
-        URLSession.shared.dataTask(with: url, completionHandler: {
-            (data, response, error) in
-            if error != nil {
-                print(error!)
-                completionHandler(nil,error)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completionHandler(data,error)
-            }
-        }).resume()
-    }
-    
     func convertServerResponseData(responseData: Data!) -> [String: Any]?{
         guard let responseDataStr: String = String(data:responseData , encoding: .utf8) else {
             // 디코딩 실패
@@ -69,15 +53,16 @@ class NetworkManager: NSObject {
         }
         return resultDic
     }
+    
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             } catch {
-                print("convertToDictionary Error : \(error.localizedDescription)")
+                return ["statusCode":"C312","error":error.localizedDescription]
             }
         }
-        return nil
+        return ["statusCode":"C313"]
     }
     func getId(id:Dictionary<String,Any>) -> Int {
         if let attributes =  id["attributes"] as? Dictionary<String, Any> {

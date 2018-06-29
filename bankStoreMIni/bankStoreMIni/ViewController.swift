@@ -17,14 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        /*
-         https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
-         https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json
-         https://itunes.apple.com/lookup?id={id}&country=kr
-         https://itunes.apple.com/lookup?id=839333328&country=kr
-         //839333328
-         */
+        
         NetworkManager.sharedManager.getStoreData(url: URL(string: "https://itunes.apple.com/kr/rss/topfreeapplications/limit=50/genre=6015/json")!)
         {
             (resultDic, error) in
@@ -52,7 +45,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifierTableViewCell", for: indexPath) as! StoreListTableViewCell
         let cellData = self.arrListModel[indexPath.row]
         cell.lblTitle.text = "\(cellData.name!)"
-        cell.lblSubTitle.text = "\(cellData.trackId!)"
         cell.lblNum.text = "\(indexPath.row + 1)"
         cell.imgLogo.loadImageUsingCache(withUrl: cellData.image!)
         return cell;
@@ -74,7 +66,5 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 }
             }
         }
-        
-        
     }
 }

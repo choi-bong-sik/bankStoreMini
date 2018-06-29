@@ -10,41 +10,9 @@ import UIKit
 
 let imageCache = NSCache<NSString, AnyObject>()
 
-class UIViewExtensions: NSObject {
-
-}
-
-extension UIView {
-    @IBInspectable var cornerRadius: CGFloat {
-        
-        get{
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }
-    }
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }
-    }
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = borderColor?.cgColor
-        }
-    }
-}
-
 extension UIImageView {
     func loadImageUsingCache(withUrl urlString : String) {
+        
         let url = URL(string: urlString)
         self.image = nil
         if let mCacheImage = loadMemoyCache(withKey: urlString){
@@ -70,5 +38,32 @@ extension UIImageView {
     }
     func saveMemoyCache(withKey key:String, withImage image:UIImage) {
         imageCache.setObject(image, forKey: key as NSString)
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        
+        get{
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = borderColor?.cgColor
+        }
     }
 }
