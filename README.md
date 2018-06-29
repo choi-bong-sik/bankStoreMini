@@ -1,0 +1,2 @@
+# bankStoreMini
+testproject
