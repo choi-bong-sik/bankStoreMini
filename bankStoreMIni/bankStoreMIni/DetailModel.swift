@@ -92,6 +92,10 @@ class DetailModel: NSObject {
         userRatingCountForCurrentVersion = dictionary["userRatingCountForCurrentVersion"] as? Int
         version = dictionary["version"] as? String
         wrapperType = dictionary["wrapperType"] as? String
+        screenshotUrls = dictionary["screenshotUrls"] as? Array
+        ipadScreenshotUrls = dictionary["ipadScreenshotUrls"] as? Array
+        appletvScreenshotUrls = dictionary["appletvScreenshotUrls"] as? Array
+        
     }
     
 }

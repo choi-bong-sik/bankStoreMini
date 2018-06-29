@@ -17,7 +17,11 @@ class DetailTableViewController: UITableViewController {
     @IBOutlet weak var lblUserRatingCount:UILabel!
     @IBOutlet weak var lblRank:UILabel!
     @IBOutlet weak var lblTrackContentRating:UILabel!
-
+    @IBOutlet weak var lblVersion:UILabel!
+    @IBOutlet weak var lblVersionReleaseDate:UILabel!
+    @IBOutlet weak var tfReleaseNotes:UITextView!
+    @IBOutlet weak var scrScreenShot:UIScrollView!
+    @IBOutlet weak var tfDescription:UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,72 +33,55 @@ class DetailTableViewController: UITableViewController {
         self.lblUserRatingCount.text = "평가 \(detailModel?.averageUserRating ?? 0)"
         self.lblTrackContentRating.text = detailModel?.trackContentRating
         self.lblRank.text = "#\(rank!)"
+        if let strVersion:String = detailModel?.version {
+            self.lblVersion.text = "버전 \(strVersion)"
+        }
+        self.lblVersionReleaseDate.text = detailModel?.currentVersionReleaseDate!
+        self.tfReleaseNotes.text = detailModel?.releaseNotes
+        
+        if (detailModel?.screenshotUrls.count)! > 0 {
+            self.drawScreenShots(imageUrls: (detailModel?.screenshotUrls)!, scrollView: scrScreenShot)
+        }
+        self.tfDescription.text = detailModel?.descriptionField
     }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        switch section {
+        case 0:
+            return 2
+        case 1:
+            return 2
+        case 2:
+            return 3
+        case 3:
+            return 2
+        default:
+            return 0
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    // MARK: - DrawObject
+    func drawScreenShots(imageUrls:Array<String>, scrollView:UIScrollView) {
+        var index = 0
+        for screenShot in (detailModel?.screenshotUrls)! {
+            let imageView = UIImageView()
+            imageView.loadImageUsingCache(withUrl: screenShot)
+            let positionX = (scrollView.frame.size.width / 2) * CGFloat(index)
+            imageView.frame = CGRect(x:positionX,
+                                     y: 0,
+                                     width: scrollView.frame.size.width/2,
+                                     height: scrollView.frame.size.height)
+            scrollView.addSubview(imageView)
+            index += 1
+            scrollView.contentSize = CGSize(width:(scrollView.frame.size.width / 2) * CGFloat(index), height:0)
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
